@@ -25,10 +25,12 @@ const Container = styled.div`
   background-image: url(${bgTop});
   background-repeat: no-repeat;
   background-position: right -190px top 0;
+  gap: 80px;
   @media (min-width: 1024px) {
     background-image: url(${bgTop}), url(${bgBottom});
     background-repeat: no-repeat, no-repeat;
     background-position: top 20px right 0px, bottom 0px left 0px;
+    gap: 64.5px;
   }
   @media (min-width: 1440px) {
     background-size: auto, 550px;
