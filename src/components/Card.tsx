@@ -106,7 +106,18 @@ const CardContainer = styled.div<{ bg: string }>`
     font-weight: 700;
     line-height: 16px;
     letter-spacing: 1.393px;
+    cursor: pointer;
 
     text-transform: uppercase;
+    :hover {
+      background: ${(props) =>
+        props.bg === "#ffffff"
+          ? "white"
+          : "linear-gradient(135deg, #A2A7F0 0.06%, #696EDD 100.06%)"};
+
+      color: ${(props) => (props.bg === "#ffffff" ? "#6D72DE" : "white")};
+      border: ${(props) =>
+        props.bg === "#ffffff" ? "1px solid #6D72DE" : "1px solid #fff"};
+    }
   }
 `;
