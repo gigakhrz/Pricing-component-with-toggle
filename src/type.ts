@@ -5,4 +5,5 @@ export interface propsType {
   user: string;
   sendsize: string;
   bgcolor: string;
+  yearlyPrice: number;
 }

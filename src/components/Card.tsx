@@ -4,14 +4,15 @@ interface CardPropsType {
   cardData: propsType[];
   index: number;
   data?: {};
+  check: boolean;
 }
 
-const Card = ({ cardData, index }: CardPropsType): JSX.Element => {
+const Card = ({ cardData, index, check }: CardPropsType): JSX.Element => {
   return (
     <CardContainer bg={cardData[index].bgcolor}>
       <div className="header">
         <h4>{cardData[index].level}</h4>
-        <h1>{cardData[index].price}</h1>
+        <h1>{check ? cardData[index].price : cardData[index].yearlyPrice}</h1>
       </div>
 
       <div className="benefits">

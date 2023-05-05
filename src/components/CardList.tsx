@@ -3,8 +3,10 @@ import { propsType } from "../type";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Card from "./Card";
-
-const CardList = (): JSX.Element => {
+interface props {
+  check: boolean;
+}
+const CardList = ({ check }: props): JSX.Element => {
   const [cardData, setCardData] = useState<propsType[]>([]);
   useEffect(() => {
     const request = async () => {
@@ -18,7 +20,13 @@ const CardList = (): JSX.Element => {
   return (
     <CardsMain>
       {cardData.map((data, index) => (
-        <Card cardData={cardData} index={index} key={index} data={data} />
+        <Card
+          cardData={cardData}
+          index={index}
+          key={index}
+          data={data}
+          check={check}
+        />
       ))}
     </CardsMain>
   );
