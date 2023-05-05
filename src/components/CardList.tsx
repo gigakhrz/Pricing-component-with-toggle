@@ -33,4 +33,9 @@ const CardsMain = styled.div`
   align-items: center;
   justify-content: center;
   gap: 32.5px;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 0;
+  }
 `;

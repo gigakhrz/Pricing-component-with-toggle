@@ -42,6 +42,10 @@ const CardContainer = styled.div<{ bg: string }>`
   border-radius: 10px;
   padding: 31px 29px;
   gap: 32px;
+  @media (min-width: 1024px) {
+    width: 350px;
+    padding: ${(props) => (props.bg !== "#ffffff" ? "54.45px 31px" : "31px")};
+  }
 
   .header {
     display: flex;
