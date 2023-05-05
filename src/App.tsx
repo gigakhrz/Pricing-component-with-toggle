@@ -1,10 +1,14 @@
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import bgTop from "./assets/bg-top.svg";
+import Card from "./components/Card";
+import CardList from "./components/CardList";
 function App() {
   return (
     <Container>
       <GlobalStyles />
+      <Card />
+      <CardList />
     </Container>
   );
 }
@@ -20,5 +24,5 @@ const Container = styled.div`
   background-color: #f7f7fe;
   background-image: url(${bgTop});
   background-repeat: no-repeat;
-  background-position: right -15%;
+  background-position: right -190px top 0;
 `;
