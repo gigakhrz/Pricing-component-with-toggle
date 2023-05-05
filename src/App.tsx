@@ -1,13 +1,12 @@
 import styled from "styled-components";
 import GlobalStyles from "./GlobalStyles";
 import bgTop from "./assets/bg-top.svg";
-import Card from "./components/Card";
+
 import CardList from "./components/CardList";
 function App() {
   return (
     <Container>
       <GlobalStyles />
-      <Card />
       <CardList />
     </Container>
   );

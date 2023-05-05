@@ -1,20 +1,26 @@
 import styled from "styled-components";
+import { propsType } from "../type";
+interface CardPropsType {
+  cardData: propsType[];
+  index: number;
+  data?: {};
+}
 
-const Card = (): JSX.Element => {
+const Card = ({ cardData, index }: CardPropsType): JSX.Element => {
   return (
-    <CardContainer>
+    <CardContainer bg={cardData[index].bgcolor}>
       <div className="header">
-        <h4>Basic</h4>
-        <h1>19.99$</h1>
+        <h4>{cardData[index].level}</h4>
+        <h1>{cardData[index].price}</h1>
       </div>
 
       <div className="benefits">
         <hr />
-        <h5>500Gb internet</h5>
+        <h5>{cardData[index].storage}</h5>
         <hr />
-        <h5>ragaca</h5>
+        <h5>{cardData[index].user}</h5>
         <hr />
-        <h5>ragaacaaa</h5>
+        <h5>{cardData[index].sendsize}</h5>
         <hr />
       </div>
 
@@ -25,13 +31,13 @@ const Card = (): JSX.Element => {
 
 export default Card;
 
-const CardContainer = styled.div`
+const CardContainer = styled.div<{ bg: string }>`
   width: 327px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: #ffffff;
+  background: ${(props) => props.bg};
   box-shadow: 0px 20px 40px rgba(212, 210, 244, 0.5);
   border-radius: 10px;
   padding: 31px 29px;
@@ -47,14 +53,14 @@ const CardContainer = styled.div`
     h4 {
       font-size: 18px;
       line-height: 28px;
-      color: #6e728e;
+      color: ${(props) => (props.bg === "#ffffff" ? " #6e728e" : "white")};
     }
 
     h1 {
       font-size: 72px;
       line-height: 71px;
       letter-spacing: -2.16px;
-      color: #4a4d60;
+      color: ${(props) => (props.bg === "#ffffff" ? " #4a4d60" : "white")};
     }
   }
 
@@ -74,7 +80,7 @@ const CardContainer = styled.div`
     }
 
     h5 {
-      color: #6e728e;
+      color: ${(props) => (props.bg === "#ffffff" ? " #6e728e" : "white")};
       font-size: 15px;
       line-height: 28px;
     }
@@ -84,7 +90,11 @@ const CardContainer = styled.div`
     border: none;
     width: 100%;
     height: 44px;
-    background: linear-gradient(135deg, #a2a7f0 0%, #696edd 100%);
+    color: ${(props) => (props.bg === "#ffffff" ? "white" : "#6D72DE")};
+    background: ${(props) =>
+      props.bg === "#ffffff"
+        ? "linear-gradient(135deg, #A2A7F0 0.06%, #696EDD 100.06%)"
+        : "white"};
     border-radius: 6px;
 
     font-family: Montserrat;
@@ -92,7 +102,7 @@ const CardContainer = styled.div`
     font-weight: 700;
     line-height: 16px;
     letter-spacing: 1.393px;
-    color: white;
+
     text-transform: uppercase;
   }
 `;
